@@ -19,19 +19,8 @@
       }
       window.onGapiReady = function() {
         console.debug('Gapi ready.');
-        var keywordList = ['todomundo@nubank.com.br']; // 'canal de atendimento'
+        var keywordList = ['todomundo@nubank.com.br' 'xpeer' 'online' 'nubank']; // 'canais'
         var keyword = keywordList[parseInt(Math.random() * keywordList.length)];
-        gapi.client.setApiKey('AIzaSyBo3T4qX9vqrQLA5TQ6Y9kaW5guW6aEDTE');
-        var restRequest = gapi.client.request({
-          path: 'youtube/v3/search',
-          params: {
-            q: keyword,
-            part: 'snippet',
-            type: 'video',
-            videoEmbeddable: true,
-            maxResults: 50
-          }
-        });
         restRequest.execute(function(resp) {
           if (resp.items) {
             console.debug('Received search results.');
